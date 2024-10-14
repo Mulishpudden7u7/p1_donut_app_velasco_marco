@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../utils/my_tab.dart';
+//importar 5 tabs
+import '../tab/burguer_tab.dart';
+import '../tab/donut_tab.dart';
+import '../tab/pancake_tab.dart';
+import '../tab/pizza_tab.dart';
+import '../tab/smoothie_tab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -71,7 +77,16 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ), //i want to eat
-          TabBar(tabs: myTabs) //tab barr
+          TabBar(tabs: myTabs),
+          //tab bar view
+          const Expanded(
+              child: TabBarView(children: [
+            DonutTab(),
+            BurguerTab(),
+            SmoothieTab(),
+            PancakeTab(),
+            PizzaTab()
+          ]))
           //
         ]),
       ),
