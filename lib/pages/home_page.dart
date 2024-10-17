@@ -80,13 +80,13 @@ class _HomePageState extends State<HomePage> {
           ), //i want to eat
           TabBar(tabs: myTabs),
           //tab bar view
-          const Expanded(
+          Expanded(
               child: TabBarView(children: [
             DonutTab(),
-            BurguerTab(),
-            SmoothieTab(),
-            PancakeTab(),
-            PizzaTab()
+            const BurguerTab(),
+            const SmoothieTab(),
+            const PancakeTab(),
+            const PizzaTab()
           ]))
           //
         ]),
