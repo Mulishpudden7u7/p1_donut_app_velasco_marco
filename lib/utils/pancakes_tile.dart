@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class DonutTile extends StatelessWidget {
-  final String donutFlavor;
-  final String donutPrice;
-  final dynamic donutColor;
+class PancakesTile extends StatelessWidget {
+  final String pancakesFlavor;
+  final String pancakesPrice;
+  final dynamic pancakesColor;
   final String imageName;
 
-  const DonutTile(
+  const PancakesTile(
       {super.key,
-      required this.donutFlavor,
-      required this.donutPrice,
-      this.donutColor,
+      required this.pancakesFlavor,
+      required this.pancakesPrice,
+      this.pancakesColor,
       required this.imageName});
 
   @override
@@ -19,7 +19,7 @@ class DonutTile extends StatelessWidget {
       padding: const EdgeInsets.all(12.0),
       child: Container(
         decoration: BoxDecoration(
-            color: donutColor[
+            color: pancakesColor[
                 50], //este es para hacer más claros los fondos de los num
             borderRadius: BorderRadius.circular(24)),
         child: Column(
@@ -30,7 +30,7 @@ class DonutTile extends StatelessWidget {
               children: [
                 Container(
                     decoration: BoxDecoration(
-                        color: donutColor[
+                        color: pancakesColor[
                             100], //este es para darle más color a los fondos de los num
                         borderRadius: const BorderRadius.only(
                             topRight: Radius.circular(24),
@@ -38,11 +38,11 @@ class DonutTile extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
                     child: Text(
-                      '\$$donutPrice',
+                      '\$$pancakesPrice',
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: donutColor[800]),
+                          color: pancakesColor[800]),
                     ))
               ],
             ),
@@ -57,7 +57,7 @@ class DonutTile extends StatelessWidget {
 
             //Donut flavor text
             Text(
-              donutFlavor,
+              pancakesFlavor,
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -65,7 +65,7 @@ class DonutTile extends StatelessWidget {
             ),
 
             Text(
-              'Dunkin´s',
+              'Pancake´s',
               style: TextStyle(color: Colors.grey[600]),
             ),
 
@@ -85,9 +85,7 @@ class DonutTile extends StatelessWidget {
                     Icons.add,
                     color: Colors.grey[800],
                   ),
-                ], //QUITAR EL DEBUG, DEBE ESTAR EN EL PRINCIPAL Y PONER 4 DONAS MÁS
-                //agregar pancake, ponerle letras y agregar cosas al carrito
-                //contador para los atículos y la suma acumulada de ellos
+                ],
               ),
             )
           ],

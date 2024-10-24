@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
-import '../utils/pizza_tile.dart';
+import '../utils/pancakes_tile.dart';
 
-class PizzaTab extends StatelessWidget {
-  final List pizzaOnSale = [
-    ["Meat Pizza", "80", Colors.red, "lib/images/meat_pizza.png"],
-    ["Cheese Pizza", "98", Colors.red, "lib/images/cheese_pizza.png"],
-    ["Tomato Pizza", "85", Colors.green, "lib/images/tomato_pizza.png"],
-    ["Chicken Pizza", "85", Colors.brown, "lib/images/chicken_pizza.png"],
-    ["Hawaiian Pizza", "80", Colors.orange, "lib/images/hawaiian_pizza.png"],
-    ["Mozarella Pizza", "89", Colors.green, "lib/images/mozarella_pizza.png"],
-    ["Pepperoni Pizza", "98", Colors.pink, "lib/images/pepperoni_pizza.png"],
-    ["Veggie Pizza", "85", Colors.brown, "lib/images/veggie_pizza.png"],
+class PanCakeTab extends StatelessWidget {
+  final List pancakesOnSale = [
+    ["Original Pancake", "80", Colors.red, "lib/images/original_pancake.png"],
+    ["Blueberry Pancake", "98", Colors.red, "lib/images/blueberry_pancake.png"],
+    ["Moka Pancake", "85", Colors.green, "lib/images/moka_pancake.png"],
+    ["Egg Pancake", "85", Colors.brown, "lib/images/egg_pancake.png"],
+    [
+      "Strawberry Pancake",
+      "80",
+      Colors.orange,
+      "lib/images/strawberry_pancake.png"
+    ],
+    ["Regular Pancake", "89", Colors.green, "lib/images/regular_pancake.png"],
+    ["Honey Pancake", "98", Colors.pink, "lib/images/honey_pancake.png"],
   ];
 
   final Function(String, double) addToCart;
   final Function(String, double) removeFromCart;
 
-  PizzaTab({
+  PanCakeTab({
     super.key,
     required this.addToCart,
     required this.removeFromCart,
@@ -25,7 +29,7 @@ class PizzaTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: pizzaOnSale.length,
+      itemCount: pancakesOnSale.length,
       padding: const EdgeInsets.all(12),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 1 / 2),
@@ -35,15 +39,15 @@ class PizzaTab extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 //add
-                String name = pizzaOnSale[index][0];
-                double price = double.parse(pizzaOnSale[index][1]);
+                String name = pancakesOnSale[index][0];
+                double price = double.parse(pancakesOnSale[index][1]);
                 addToCart(name, price);
               },
-              child: PizzaTile(
-                pizzaFlavor: pizzaOnSale[index][0],
-                pizzaPrice: pizzaOnSale[index][1],
-                pizzaColor: pizzaOnSale[index][2],
-                imageName: pizzaOnSale[index][3],
+              child: PancakesTile(
+                pancakesFlavor: pancakesOnSale[index][0],
+                pancakesPrice: pancakesOnSale[index][1],
+                pancakesColor: pancakesOnSale[index][2],
+                imageName: pancakesOnSale[index][3],
               ),
             ),
             //add
@@ -53,8 +57,8 @@ class PizzaTab extends StatelessWidget {
                 //delete
                 GestureDetector(
                   onTap: () {
-                    String name = pizzaOnSale[index][0];
-                    double price = double.parse(pizzaOnSale[index][1]);
+                    String name = pancakesOnSale[index][0];
+                    double price = double.parse(pancakesOnSale[index][1]);
                     removeFromCart(name, price);
                   },
                   child: Container(
@@ -74,8 +78,8 @@ class PizzaTab extends StatelessWidget {
                 //add botton
                 GestureDetector(
                   onTap: () {
-                    String name = pizzaOnSale[index][0];
-                    double price = double.parse(pizzaOnSale[index][1]);
+                    String name = pancakesOnSale[index][0];
+                    double price = double.parse(pancakesOnSale[index][1]);
                     addToCart(name, price);
                   },
                   child: Container(

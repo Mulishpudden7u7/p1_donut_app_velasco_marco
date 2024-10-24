@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class MyTab extends StatelessWidget {
   final String iconPath;
-  final String label; // Nuevo parámetro para el texto
+  final String iconname;
 
   const MyTab({
     super.key,
     required this.iconPath,
-    required this.label, // Asegúrate de incluir el parámetro en el constructor
+    required this.iconname,
   });
 
   @override
@@ -31,7 +31,7 @@ class MyTab extends StatelessWidget {
             ),
             const SizedBox(height: 2), // Espacio entre el ícono y el texto
             Text(
-              label,
+              iconname,
               style: const TextStyle(
                 fontSize: 10,
                 color: Colors
