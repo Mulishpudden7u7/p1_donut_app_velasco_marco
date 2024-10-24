@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/my_tab.dart';
-import '../widgets/cart_bar.dart';
+
 import '../tab/donut_tab.dart';
 import '../tab/burger_tab.dart';
 import '../tab/pancakes_tab.dart';
